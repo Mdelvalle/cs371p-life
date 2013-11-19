@@ -1,12 +1,18 @@
+// ----------------
+// FredkinCell.c++
+// ----------------
+
+// INCLUDES
 #include "FredkinCell.h"
 
-FredkinCell::FredkinCell(c) {
+FredkinCell::FredkinCell(char c, int row, int col) :
+                         AbstractCell(row, col) {
 	if(c == '-') {
 		AbstractCell::_alive = false;
 		_age = 0;
 	}
 	else if(c == '+') {
-		AbstractCell::_alive = false;
+		AbstractCell::_alive = true;
 		_age = 10;
 	}
 	else {

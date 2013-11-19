@@ -1,6 +1,6 @@
-// --------
+// ---------------
 // AbstractCell.h
-// --------
+// ---------------
 
 #ifndef AbstractCell_h
 #define AbstractCell_h
@@ -24,7 +24,12 @@ public:
 	bool _edge;
 	bool _corner;
 	bool _interior;
-	AbstractCell();
+
+	AbstractCell(int, int);
+
+  bool edge_cell(int, int);
+  bool corner_cell(int, int);
+  bool interior_cell(int, int);
 };
 
-#endif
+#endif // AbstractCell_h

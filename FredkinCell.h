@@ -1,3 +1,7 @@
+// --------------
+// FredkinCell.h
+// --------------
+
 #ifndef FredKinCell_h
 #define FredKinCell_h
 
@@ -12,14 +16,9 @@ protected:
 		return false;
 	}
 
-	virtual std::istream& read(std::istream& in) {
-		return AbstractCell::
-	}
-
 public:
-	FredkinCell(char c);
-
+	FredkinCell(char, int, int);
 	char print();
 };
 
-#endif
+#endif // FredkinCell_h

@@ -62,7 +62,7 @@ int main () {
         ifstream ifile("RunLifeConway.in");
         ofile << "*** Life<ConwayCell> 109x69 ***" << endl;
 
-        Life/*<ConwayCell>*/ life(ifile);
+        Life<ConwayCell> life(ifile);
         ifile.close();
         life.print(ofile);
         }
@@ -85,7 +85,7 @@ int main () {
         ifstream ifile("RunLifeFredkin.in");
         ofile << "*** Life<FredkinCell> 20x20 ***" << endl;
 
-        Life/*<FredkinCell>*/ life(ifile);
+        Life<FredkinCell> life(ifile);
         ifile.close();
         life.print(ofile);
         }
@@ -108,7 +108,7 @@ int main () {
         ifstream ifile("RunLifeCell.in");
         ofile << "*** Life<Cell> 20x20 ***" << endl;
 
-        Life/*<Cell>*/ life(ifile);
+        Life<Cell> life(ifile);
         ifile.close();
         life.print(ofile);
         }
@@ -116,6 +116,8 @@ int main () {
         assert(false);}
     catch (const out_of_range&) {
         assert(false);}
+
+    ofile.close();
 
     return 0;}
 

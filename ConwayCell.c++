@@ -1,6 +1,11 @@
+// -------------
+// ConwayCell.h
+// -------------
+
+// INCLUDES
 #include "ConwayCell.h"
 
-ConwayCell::ConwayCell(c) {
+ConwayCell::ConwayCell(char c) {
 	if(c == '.')
 		AbstractCell::_alive = false;
 	else if(c == '*')

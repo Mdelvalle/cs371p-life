@@ -1,3 +1,7 @@
+// -------
+// Life.h
+// -------
+
 #ifndef Life_h
 #define Life_h
 
@@ -27,17 +31,25 @@ private:
 		// Store chars in _grid vector
 		string line;
 		int count = 0;
+    int row = 0;
+    int col = 0;
 		getline(r, line);
+
 		while(getline(r, line)) {
-			vector<T> temp;
+      assert(line != NULL);
+
+			vector<T> temp_grid;
 			stringstream s(line);
 			char c;
 
 			while(s >> c) {
-				T cell(c);
-				temp.push_back(cell);
+				T cell(c, row, col);
+				temp_grid.push_back(cell);
+        ++col;
 			}
-			_grid.push_back(temp);
+			_grid.push_back(temp_grid);
+      col = 0;
+      ++row;
 			++count;
 		}
 	}
@@ -61,4 +73,4 @@ public:
 	}
 };
 
-#endif
+#endif // Life_h

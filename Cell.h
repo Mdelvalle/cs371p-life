@@ -1,3 +1,7 @@
+// -------
+// Cell.h
+// -------
+
 #ifndef Cell_h
 #define Cell_h
 
@@ -25,4 +29,4 @@ class Cell : Handle<AbstractCell> {
 
 };
 
-#endif
+#endif // Cell_h
