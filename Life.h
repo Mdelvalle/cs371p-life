@@ -1,3 +1,7 @@
+#ifndef Life_h
+#define Life_h
+
+// INCLUDES
 #include <cassert>
 #include <iostream>
 #include <iterator>
@@ -9,18 +13,18 @@ using namespace std;
 //template <typename T>
 class Life {
 private:
-	vector<vector<char> > grid;
-	int rows;
-	int columns;
+	vector<vector<char> > _grid;
+	int _rows;
+	int _columns;
 
-public:
 	void store_cells(istream& r) {
-		// Store rows and columns
-		r >> rows;
-		assert(rows > 0);
-		r >> columns;
-		assert(columns > 0);
+		// Store _rows and _columns
+		r >> _rows;
+		assert(_rows > 0);
+		r >> _columns;
+		assert(_columns > 0);
 
+		// Store chars in _grid vector
 		string line;
 		int count = 0;
 		getline(r, line);
@@ -32,19 +36,27 @@ public:
 			while(s >> c) {
 				temp.push_back(c);
 			}
-			grid.push_back(temp);
+			_grid.push_back(temp);
 			++count;
 		}
 	}
 
-	void print_grid() {
-		cout << rows << endl;
-		cout << columns << endl;
-		for(int i = 0; i < rows; ++i) {
-			for(int j = 0; j < columns; ++j) {
-				cout << grid[i][j];
+public:
+	Life(ifstream& f) {
+		store_cells(f);
+	}
+
+	void print(ofstream& f) {
+		f << _rows << endl;
+		f << _columns << endl;
+		for(int i = 0; i < _rows; ++i) {
+			for(int j = 0; j < _columns; ++j) {
+				f << _grid[i][j];
 			}
-			cout << endl;
+			f << endl;
 		}
+		f << endl;
 	}
 };
+
+#endif

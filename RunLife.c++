@@ -29,6 +29,7 @@ To document the program:
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
+#include <fstream>
 #include "Life.h"
 
 // ----
@@ -38,6 +39,9 @@ To document the program:
 int main () {
     using namespace std;
     ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
+
+    ofstream ofile;
+    ofile.open("RunLife.out");
 
     // ------------------
     // Conway Cell 109x69
@@ -55,10 +59,12 @@ int main () {
         Simulate 2177 moves.
         Print the 2500th grid.
         */
+        ifstream ifile("RunLifeConway.in");
+        ofile << "*** Life<ConwayCell> 109x69 ***" << endl;
 
-        Life world;
-        world.store_cells(cin);
-        world.print_grid();
+        Life/*<ConwayCell>*/ life(ifile);
+        ifile.close();
+        life.print(ofile);
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -76,6 +82,12 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
+        ifstream ifile("RunLifeFredkin.in");
+        ofile << "*** Life<FredkinCell> 20x20 ***" << endl;
+
+        Life/*<FredkinCell>*/ life(ifile);
+        ifile.close();
+        life.print(ofile);
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -93,6 +105,12 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
+        ifstream ifile("RunLifeCell.in");
+        ofile << "*** Life<Cell> 20x20 ***" << endl;
+
+        Life/*<Cell>*/ life(ifile);
+        ifile.close();
+        life.print(ofile);
         }
     catch (const invalid_argument&) {
         assert(false);}
