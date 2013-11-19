@@ -7,7 +7,7 @@
 
 class Cell : Handle<AbstractCell> {
     Cell(AbstractCell* p) :
-            Handle<AbstractCell> (p)
+            Handle<AbstractCell> (p);
         {}
 
 /*
@@ -22,7 +22,7 @@ class Cell : Handle<AbstractCell> {
 		Handle<AbstractCell>::operator=(that);
 		return *this;}
 */
-	
+
 };
 
 #endif

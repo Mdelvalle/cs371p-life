@@ -17,7 +17,7 @@ protected:
 	}
 
 public:
-	FredkinCell();
+	FredkinCell(char c);
 
 	char print();
 };

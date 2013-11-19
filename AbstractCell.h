@@ -20,9 +20,11 @@ class AbstractCell {
         return rhs.write(lhs);}
 
 public:
-	bool state;
+	bool _alive;
+	bool _edge;
+	bool _corner;
+	bool _interior;
 	AbstractCell();
-	
 };
 
 #endif

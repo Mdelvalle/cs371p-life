@@ -10,10 +10,10 @@
 
 using namespace std;
 
-//template <typename T>
+template <typename T>
 class Life {
 private:
-	vector<vector<char> > _grid;
+	vector<vector<T> > _grid;
 	int _rows;
 	int _columns;
 
@@ -29,17 +29,19 @@ private:
 		int count = 0;
 		getline(r, line);
 		while(getline(r, line)) {
-			vector<char> temp;
+			vector<T> temp;
 			stringstream s(line);
 			char c;
 
 			while(s >> c) {
-				temp.push_back(c);
+				T cell(c);
+				temp.push_back(cell);
 			}
 			_grid.push_back(temp);
 			++count;
 		}
 	}
+
 
 public:
 	Life(ifstream& f) {

@@ -1,7 +1,10 @@
 #include "ConwayCell.h"
 
-ConwayCell::ConwayCell() {
-	
+ConwayCell::ConwayCell(c) {
+	if(c == '.')
+		AbstractCell::_alive = false;
+	else if(c == '*')
+		AbstractCell::_alive = true;
 }
 
 char ConwayCell::print() {

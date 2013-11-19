@@ -1,7 +1,18 @@
 #include "FredkinCell.h"
 
-FredkinCell::FredkinCell() {
-	_age = 0;
+FredkinCell::FredkinCell(c) {
+	if(c == '-') {
+		AbstractCell::_alive = false;
+		_age = 0;
+	}
+	else if(c == '+') {
+		AbstractCell::_alive = false;
+		_age = 10;
+	}
+	else {
+		_age = c - '0';
+		AbstractCell::_alive = true
+	}
 }
 
 char FredkinCell::print() {
