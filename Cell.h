@@ -10,9 +10,9 @@
 #include "AbstractCell.h"
 
 class Cell : Handle<AbstractCell> {
-    Cell(AbstractCell* p) :
-            Handle<AbstractCell> (p);
-        {}
+public:
+    Cell(AbstractCell* p);
+
 
 /*
 	Cell (const Cell& that) :

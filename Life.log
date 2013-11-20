@@ -1,3 +1,27 @@
+commit 22d91a0b38416a6a82d6ac0ef0e46ff36d23122a
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Tue Nov 19 16:51:33 2013 -0600
+
+    testing for edge, corner, and interior cell
+
+commit 00fa4b13d3f68140ac9c679dce9106a460f2fa30
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Mon Nov 18 20:05:12 2013 -0600
+
+    logic for conway and fredkin
+
+commit 8a7cdc6d7fdff8ff79e73c27f7d4342712c1da02
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Mon Nov 18 19:09:30 2013 -0600
+
+    changed input/output
+
+commit a0432f599696afc16c2b979e65393d40c3e223f3
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Sun Nov 17 20:48:21 2013 -0600
+
+    got file input working
+
 commit 03192db45a91ae93b183e922cbe8eeaec86f6ae2
 Author: miguel del valle <delvalle@cs.utexas.edu>
 Date:   Sun Nov 10 20:27:32 2013 -0600

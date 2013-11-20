@@ -5,6 +5,5 @@
 // INCLUDES
 #include "Cell.h"
 
-Cell::Cell() {
-
-}
+Cell::Cell(AbstractCell* p) : 
+		Handle<AbstractCell> (p) {}

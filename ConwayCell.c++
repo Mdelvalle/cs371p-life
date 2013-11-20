@@ -1,11 +1,13 @@
-// -------------
-// ConwayCell.h
-// -------------
+// ---------------
+// ConwayCell.c++
+// ---------------
 
 // INCLUDES
 #include "ConwayCell.h"
 
-ConwayCell::ConwayCell(char c) {
+ConwayCell::ConwayCell(char c)  :
+                       AbstractCell() {
+    _liveNeighbours = 0;
 	if(c == '.')
 		AbstractCell::_alive = false;
 	else if(c == '*')
@@ -13,8 +15,12 @@ ConwayCell::ConwayCell(char c) {
 }
 
 char ConwayCell::print() {
-	if(alive)
+	if(AbstractCell::_alive)
 		return '*';
 	else
 		return '.';
+}
+
+char ConwayCell::print_live_neighbours() {
+	return _liveNeighbours + '0';
 }

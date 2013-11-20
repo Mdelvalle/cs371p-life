@@ -31,6 +31,9 @@ To document the program:
 #include <stdexcept> // invalid_argument, out_of_range
 #include <fstream>
 #include "Life.h"
+#include "ConwayCell.h"
+#include "FredkinCell.h"
+#include "Cell.h"
 
 // ----
 // main
@@ -62,8 +65,10 @@ int main () {
         ifstream ifile("RunLifeConway.in");
         ofile << "*** Life<ConwayCell> 109x69 ***" << endl;
 
-        Life<ConwayCell> life(ifile);
+        Life<ConwayCell> life;
+        life.store_cells(ifile);
         ifile.close();
+        life.live_neighbours();
         life.print(ofile);
         }
     catch (const invalid_argument&) {
@@ -82,12 +87,13 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
-        ifstream ifile("RunLifeFredkin.in");
+/*        ifstream ifile("RunLifeFredkin.in");
         ofile << "*** Life<FredkinCell> 20x20 ***" << endl;
 
-        Life<FredkinCell> life(ifile);
+        Life<FredkinCell> life;
+        life.store_cells(ifile);
         ifile.close();
-        life.print(ofile);
+        life.print(ofile);*/
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -105,12 +111,13 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
-        ifstream ifile("RunLifeCell.in");
+/*        ifstream ifile("RunLifeCell.in");
         ofile << "*** Life<Cell> 20x20 ***" << endl;
 
-        Life<Cell> life(ifile);
+        Life<Cell> life;
+        life.store_cells(ifile);
         ifile.close();
-        life.print(ofile);
+        life.print(ofile);*/
         }
     catch (const invalid_argument&) {
         assert(false);}

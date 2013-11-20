@@ -5,8 +5,8 @@
 // INCLUDES
 #include "FredkinCell.h"
 
-FredkinCell::FredkinCell(char c, int row, int col) :
-                         AbstractCell(row, col) {
+FredkinCell::FredkinCell(char c) :
+                         AbstractCell() {
 	if(c == '-') {
 		AbstractCell::_alive = false;
 		_age = 0;
@@ -17,15 +17,15 @@ FredkinCell::FredkinCell(char c, int row, int col) :
 	}
 	else {
 		_age = c - '0';
-		AbstractCell::_alive = true
+		AbstractCell::_alive = true;
 	}
 }
 
 char FredkinCell::print() {
-	if(age < 10)
-		return static_cast<char>(age);
-	else if(age >= 10)
+	if(!(AbstractCell::_alive))
+		return '-';
+	else if(_age >= 10)
 		return '+';
 	else
-		return '-';
+		return _age + '0';
 }
