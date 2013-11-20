@@ -68,8 +68,12 @@ int main () {
         Life<ConwayCell> life;
         life.store_cells(ifile);
         ifile.close();
-        life.live_neighbours();
         life.print(ofile);
+        
+        for(int i = 0; i < 283; ++i) {
+          life.simulate();
+          life.print(ofile);
+        }
         }
     catch (const invalid_argument&) {
         assert(false);}

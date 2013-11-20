@@ -8,7 +8,7 @@
 // INCLUDES
 #include "AbstractCell.h"
 
-class ConwayCell : AbstractCell {
+class ConwayCell : public AbstractCell {
 /*	protected:
 		virtual bool equals(const AbstractCell& that) const {
 			if(const ConwayCell* const p = dynamic_cast<const ConwayCell*>(&that))
