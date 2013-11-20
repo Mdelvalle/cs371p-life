@@ -8,7 +8,7 @@
 // INCLUDES
 #include "AbstractCell.h"
 
-class FredkinCell : AbstractCell {
+class FredkinCell : public AbstractCell {
 private:
 	int _age;
 
@@ -20,8 +20,10 @@ private:
 	}*/
 
 public:
+	int _liveNeighbours;
 	FredkinCell(char);
 	char print();
+	void inc_age();
 };
 
 #endif // FredkinCell_h

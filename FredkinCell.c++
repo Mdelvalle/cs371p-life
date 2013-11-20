@@ -29,3 +29,7 @@ char FredkinCell::print() {
 	else
 		return _age + '0';
 }
+
+void FredkinCell::inc_age() {
+	++_age;
+}
