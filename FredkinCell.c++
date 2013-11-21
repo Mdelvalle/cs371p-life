@@ -22,7 +22,16 @@
 }*/
 
 FredkinCell::FredkinCell() : AbstractCell() {
+	AbstractCell::_alive = true;
 	_liveNeighbours = 0;
+}
+
+void FredkinCell::mutate() {
+	
+}
+
+FredkinCell* FredkinCell::clone() const {
+    return new FredkinCell(*this);
 }
 
 std::istream& FredkinCell::read (std::istream& in) {
@@ -59,8 +68,4 @@ void FredkinCell::inc_age() {
 
 std::string FredkinCell::type() {
 	return "FredkinCell";
-}
-
-FredkinCell* FredkinCell::clone() const {
-    return new FredkinCell(*this);
 }

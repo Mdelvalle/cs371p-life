@@ -24,6 +24,7 @@ public:
 
 	AbstractCell();
 
+  virtual void mutate() = 0;
   virtual std::string type() = 0;
   virtual AbstractCell* clone() const = 0;
   virtual std::istream& read (std::istream& in) = 0;

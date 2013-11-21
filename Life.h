@@ -441,8 +441,11 @@ public:
 
 				  		// cell remains alive, so increment its age
 				  		else {
-				  			if(_grid[i][j]._alive)
+				  			if(_grid[i][j]._alive) {
 				  				_grid[i][j].inc_age();
+				  				if(_grid[i][j]._age == 2)
+				  					_grid[i][j].mutate();
+							}
 				  		}
 				  	}
 			  	}

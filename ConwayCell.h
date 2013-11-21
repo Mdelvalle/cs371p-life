@@ -16,6 +16,7 @@ class ConwayCell : public AbstractCell {
 		std::string type();
 		void inc_age();
 
+		virtual void mutate();
 		virtual std::istream& read (std::istream&);
 		virtual std::ostream& write (std::ostream&) const;
 		virtual ConwayCell* clone() const;

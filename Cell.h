@@ -14,10 +14,11 @@
 class Cell : Handle<AbstractCell> {
 	public:
     	AbstractCell* ac;
+    	Cell();
     	Cell(AbstractCell* p);
-    	void mutate();
     	std::string type();
 
+    	virtual void mutate();
     	virtual std::istream& read (std::istream&);
     	virtual std::ostream& write (std::ostream&) const;
 };

@@ -18,6 +18,10 @@ ConwayCell::ConwayCell() : AbstractCell() {
 	_liveNeighbours = 0;
 }
 
+void ConwayCell::mutate() {
+	
+}
+
 std::istream& ConwayCell::read (std::istream& in) {
 	char c;
 	in >> c;

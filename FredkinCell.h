@@ -17,8 +17,10 @@ public:
 	FredkinCell();
 	char print();
 	void inc_age();
+	
 	std::string type();
 
+	virtual void mutate();
 	virtual FredkinCell* clone() const;
 	virtual std::istream& read (std::istream&);
 	virtual std::ostream& write (std::ostream&) const;
