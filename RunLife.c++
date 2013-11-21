@@ -6,7 +6,7 @@
 
 /*
 To run the program:
-    % g++ -pedantic -std=c++0x -Wall AbstractCell.c++ Cell.c++ ConwayCell.c++ FredkinCell.c++ -o RunLife
+    % g++ -pedantic -std=c++0x -Wall AbstractCell.c++ Cell.c++ ConwayCell.c++ FredkinCell.c++ RunLife.c++ -o RunLife
     % valgrind RunLife > RunLife.out
 
 To configure Doxygen:
@@ -51,7 +51,7 @@ int main () {
     // ------------------
 
     try {
-        cout << "*** Life<ConwayCell> 109x69 ***" << endl;
+        //cout << "*** Life<ConwayCell> 109x69 ***" << endl;
         /*
         read RunLifeConway.in // assume all Conway cells
         Simulate 283 moves.
@@ -62,7 +62,7 @@ int main () {
         Simulate 2177 moves.
         Print the 2500th grid.
         */
-/*        ifstream ifile("RunLifeConway.in");
+        ifstream ifile("RunLifeConway.in");
         ofile << "*** Life<ConwayCell> 109x69 ***" << endl;
 
         Life<ConwayCell> life;
@@ -77,7 +77,7 @@ int main () {
         life.print(ofile, 323);
 
         life.simulate(2177, 0, ofile);
-        life.print(ofile, 2500);*/
+        life.print(ofile, 2500);
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -89,7 +89,7 @@ int main () {
     // ------------------
 
     try {
-        cout << "*** Life<FredkinCell> 20x20 ***" << endl;
+        //cout << "*** Life<FredkinCell> 20x20 ***" << endl;
         /*
         read RunLifeFredkin.in // assume all Fredkin cells
         Simulate 5 moves.
@@ -116,7 +116,7 @@ int main () {
     // ----------
 
     try {
-        cout << "*** Life<Cell> 20x20 ***" << endl;
+        //cout << "*** Life<Cell> 20x20 ***" << endl;
         /*
         read RunLifeCell.in // assume all Fredkin cells
         Simulate 5 moves.

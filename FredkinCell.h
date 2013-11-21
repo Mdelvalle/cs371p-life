@@ -12,18 +12,16 @@ class FredkinCell : public AbstractCell {
 private:
 	int _age;
 
-/*protected:
-	virtual bool equals(const AbstractCell& that) const {
-		if(const FredkinCell* const p = dynamic_cast<const FredkinCell*>(&that))
-			return AbstractCell::equals(*p) && (_age == p->_age);
-		return false;
-	}*/
-
 public:
 	int _liveNeighbours;
-	FredkinCell(char);
+	FredkinCell();
 	char print();
 	void inc_age();
+	std::string type();
+
+	virtual FredkinCell* clone() const;
+	virtual std::istream& read (std::istream&);
+	virtual std::ostream& write (std::ostream&) const;
 };
 
 #endif // FredkinCell_h

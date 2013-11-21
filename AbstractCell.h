@@ -22,12 +22,12 @@ class AbstractCell {
 public:
 	bool _alive;
 
-
 	AbstractCell();
 
-/*  virtual bool edge_cell(int, int);
-  virtual bool corner_cell(int, int);
-  virtual std::string type() = 0;*/
+  virtual std::string type() = 0;
+  virtual AbstractCell* clone() const = 0;
+  virtual std::istream& read (std::istream& in) = 0;
+  virtual std::ostream& write (std::ostream& out) const = 0;
 };
 
 #endif // AbstractCell_h

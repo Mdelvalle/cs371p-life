@@ -9,18 +9,16 @@
 #include "AbstractCell.h"
 
 class ConwayCell : public AbstractCell {
-/*	protected:
-		virtual bool equals(const AbstractCell& that) const {
-			if(const ConwayCell* const p = dynamic_cast<const ConwayCell*>(&that))
-				return AbstractCell::equals(*p) && (_age == p->_age);
-			return false;
-		}
-*/
 	public:
 		int _liveNeighbours;
-		ConwayCell(char);
+		ConwayCell();
 		char print();
-		char print_live_neighbours();
+		std::string type();
+		void inc_age();
+
+		virtual std::istream& read (std::istream&);
+		virtual std::ostream& write (std::ostream&) const;
+		virtual ConwayCell* clone() const;
 };
 
 #endif // ConwayCell_h

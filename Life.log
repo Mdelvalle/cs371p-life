@@ -1,3 +1,27 @@
+commit 5ce8b1a9338ba90cfac549a527be254d3b9d0e2c
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Wed Nov 20 17:15:13 2013 -0600
+
+    Simulating Fredkin cells is now working
+
+commit f7aec4ec654f892a469d1eab08510f0fde983c8b
+Author: mdelvalle <mdelvalle@utexas.edu>
+Date:   Wed Nov 20 12:50:01 2013 -0800
+
+    Simulating Conway cells is now working
+
+commit 9f4ac3a76951ceb0f3919836c23f1b7dbfd625a8
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Wed Nov 20 13:53:32 2013 -0600
+
+    checking of live neighbours
+
+commit b53b95a0e77985e55aff76945a724fe76134a719
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Wed Nov 20 01:13:47 2013 -0600
+
+    latest commit
+
 commit 22d91a0b38416a6a82d6ac0ef0e46ff36d23122a
 Author: miguel del valle <delvalle@cs.utexas.edu>
 Date:   Tue Nov 19 16:51:33 2013 -0600

@@ -8,25 +8,18 @@
 // INCLUDES
 #include "Handle.h"
 #include "AbstractCell.h"
+#include "ConwayCell.h"
+#include "FredkinCell.h"
 
 class Cell : Handle<AbstractCell> {
-public:
-    Cell(AbstractCell* p);
+	public:
+    	AbstractCell* ac;
+    	Cell(AbstractCell* p);
+    	void mutate();
+    	std::string type();
 
-
-/*
-	Cell (const Cell& that) :
-			Handle<AbstractCell> (that)
-		{}
-
-	~Cell ()
-		{}
-
-	Cell& operator = (const Cell& that) {
-		Handle<AbstractCell>::operator=(that);
-		return *this;}
-*/
-
+    	virtual std::istream& read (std::istream&);
+    	virtual std::ostream& write (std::ostream&) const;
 };
 
 #endif // Cell_h
