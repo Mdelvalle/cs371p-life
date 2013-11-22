@@ -18,9 +18,34 @@ ConwayCell::ConwayCell() : AbstractCell() {
 	_liveNeighbours = 0;
 }
 
-void ConwayCell::mutate() {
-	
+void ConwayCell::alive(bool b) {
+	AbstractCell::_alive = b;
 }
+
+bool ConwayCell::alive() {
+    return AbstractCell::_alive;
+}
+
+void ConwayCell::liveNeighbours(int b) {
+	AbstractCell::_liveNeighbours = b;
+}
+
+int ConwayCell::liveNeighbours() {
+	return AbstractCell::_liveNeighbours;
+}
+
+bool ConwayCell::can_mutate() {
+	//std::cout << "in mutate CONW" << std::endl;
+	return false;
+}
+
+void ConwayCell::mutate() {
+	// Pass	
+}
+
+/*void ConwayCell::set_liveliness() {
+
+}*/
 
 std::istream& ConwayCell::read (std::istream& in) {
 	char c;
@@ -44,7 +69,9 @@ std::string ConwayCell::type() {
 	return "ConwayCell";
 }
 
-void ConwayCell::inc_age() {}
+void ConwayCell::inc_age() {
+	// Pass
+}
 
 ConwayCell* ConwayCell::clone() const {
     return new ConwayCell(*this);

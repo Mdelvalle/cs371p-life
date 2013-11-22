@@ -8,26 +8,50 @@
 /*FredkinCell::FredkinCell(char c) :
                          AbstractCell() {
 	if(c == '-') {
-		AbstractCell::_alive = false;
+		_alive = false;
 		_age = 0;
 	}
 	else if(c == '+') {
-		AbstractCell::_alive = true;
+		_alive = true;
 		_age = 10;
 	}
 	else {
 		_age = c - '0';
-		AbstractCell::_alive = true;
+		_alive = true;
 	}
 }*/
 
 FredkinCell::FredkinCell() : AbstractCell() {
-	AbstractCell::_alive = true;
+	_age = 0;
+	_alive = true;
 	_liveNeighbours = 0;
 }
 
+void FredkinCell::alive(bool b) {
+	_alive = b;
+}
+
+bool FredkinCell::alive() {
+    return _alive;
+}
+
+void FredkinCell::liveNeighbours(int b) {
+	AbstractCell::_liveNeighbours = b;
+}
+
+int FredkinCell::liveNeighbours() {
+	return AbstractCell::_liveNeighbours;
+}
+
+bool FredkinCell::can_mutate() {
+	if(_age == 2)
+		return true;
+	else
+		return false;
+}
+
 void FredkinCell::mutate() {
-	
+	// Pass
 }
 
 FredkinCell* FredkinCell::clone() const {
@@ -39,22 +63,23 @@ std::istream& FredkinCell::read (std::istream& in) {
 	in >> c;
 
 	if(c == '-') {
-		AbstractCell::_alive = false;
+		_alive = false;
 		_age = 0;
 	}
 	else if(c == '+') {
-		AbstractCell::_alive = true;
+		_alive = true;
 		_age = 10;
 	}
 	else {
+		_alive = true;
 		_age = c - '0';
-		AbstractCell::_alive = true;
 	}
+	//std::cout << _alive;
 	return in;
 }
 
 std::ostream& FredkinCell::write (std::ostream& out) const {
-	if(!(AbstractCell::_alive))
+	if(!(_alive))
 		return out << '-';
 	else if(_age >= 10)
 		return out << '+';

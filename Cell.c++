@@ -5,19 +5,50 @@
 // INCLUDES
 #include "Cell.h"
 
-Cell::Cell() : Handle(new FredkinCell()) {}
+Cell::Cell() : Handle(new FredkinCell()) {
+	ac = get();
+}
 
 Cell::Cell(AbstractCell* p) : 
 	Handle<AbstractCell> (p) {
     ac = p;
 }
 
+void Cell::alive(bool b) {
+    get()->_alive = b;
+}
+
+bool Cell::alive() {
+    return get()->_alive;
+}
+
+void Cell::liveNeighbours(int b) {
+    get()->_liveNeighbours = b;
+}
+
+int Cell::liveNeighbours() {
+    return get()->_liveNeighbours;
+}
+
 std::string Cell::type() {
     return get()->type();
 }
 
+/*void Cell::set_liveliness() {
+    ac->_alive = ac->set_liveliness();
+}*/
+
+void Cell::inc_age() {
+	ac->inc_age();
+}
+
+bool Cell::can_mutate() {
+    //std::cout << "in mutate CELL" << std::endl;
+	return ac->can_mutate();
+}
+
 void Cell::mutate () {
-    Cell c = new ConwayCell();
+    Cell c(new ConwayCell());
     get()->_alive = true;
     swap(c);
 }

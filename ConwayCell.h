@@ -10,12 +10,17 @@
 
 class ConwayCell : public AbstractCell {
 	public:
-		int _liveNeighbours;
+		//int _liveNeighbours;
 		ConwayCell();
-		char print();
-		std::string type();
 		void inc_age();
 
+		// virtual void set_liveliness();
+		virtual void alive(bool);
+		virtual bool alive();
+        virtual void liveNeighbours(int);
+        virtual int liveNeighbours();
+		virtual std::string type();
+		virtual bool can_mutate();
 		virtual void mutate();
 		virtual std::istream& read (std::istream&);
 		virtual std::ostream& write (std::ostream&) const;

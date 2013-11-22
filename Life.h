@@ -38,35 +38,20 @@ public:
 		_grid.resize(_rows);
 		// Store chars in _grid vector
 		for(int i = 0; i < _rows; ++i) {
-			//std::vector<T> temp_grid;
 			_grid[i].resize(_columns);
 			for(int j = 0; j < _columns; ++j) {
-				//T cell();
-				//cell.read(in);
-				//temp_grid.push_back(cell);
 				_grid[i][j].read(in);
 			}
-			//_grid.push_back(temp_grid);
+			//std::cout << std::endl;
 		}
-
-/*		string line;
-		int count = 0;
-		getline(r, line);
-
-		while(getline(r, line)) {
-      	assert(line != "");
-
-			vector<T> temp_grid;
-			stringstream s(line);
-			char c;
-
-			while(s >> c) {
-				T cell(c);
-				temp_grid.push_back(cell);
+		std::cout << std::endl;
+/*		for(int i = 0; i < _rows; ++i) {
+			for(int j = 0; j < _columns; ++j) {
+				std::cout << _grid[i][j].alive();
 			}
-			_grid.push_back(temp_grid);
-			++count;
-		}*/
+			std::cout << std::endl;
+		}
+		std::cout << std::endl;*/
 	}
 
 	// returns true if cell is in edge, false otherwise
@@ -97,15 +82,15 @@ public:
 		if(row == 0) {
 			// ConwayCell
 			if(type == "ConwayCell") {
-				if(_grid[row][col-1]._alive)
+				if(_grid[row][col-1].alive())
 					++count;
-				if(_grid[row+1][col-1]._alive)
+				if(_grid[row+1][col-1].alive())
 					++count;
-				if(_grid[row+1][col]._alive)
+				if(_grid[row+1][col].alive())
 					++count;
-				if(_grid[row+1][col+1]._alive)
+				if(_grid[row+1][col+1].alive())
 					++count;
-				if(_grid[row][col+1]._alive)
+				if(_grid[row][col+1].alive())
 					++count;
 
 				return count;
@@ -114,11 +99,11 @@ public:
 
 			// FredkinCell
 			else if(type == "FredkinCell") {
-				if(_grid[row][col-1]._alive)	// Top
+				if(_grid[row][col-1].alive())	// Top
 					++count;
-				if(_grid[row][col+1]._alive)	// Right
+				if(_grid[row][col+1].alive())	// Right
 					++count;
-				if(_grid[row+1][col]._alive)	// Bottom
+				if(_grid[row+1][col].alive())	// Bottom
 					++count;
 
 				return count;
@@ -129,15 +114,15 @@ public:
 		else if(row == (_rows - 1)) {
 			// ConwayCell
 			if(type == "ConwayCell") {
-				if(_grid[row][col-1]._alive)
+				if(_grid[row][col-1].alive())
 					++count;
-				if(_grid[row-1][col-1]._alive)
+				if(_grid[row-1][col-1].alive())
 					++count;
-				if(_grid[row-1][col]._alive)
+				if(_grid[row-1][col].alive())
 					++count;
-				if(_grid[row-1][col+1]._alive)
+				if(_grid[row-1][col+1].alive())
 					++count;
-				if(_grid[row][col+1]._alive)
+				if(_grid[row][col+1].alive())
 					++count;
 
 				return count;
@@ -145,11 +130,11 @@ public:
 
 			// FredkinCell
 			else if(type == "FredkinCell") {
-				if(_grid[row-1][col]._alive)	// Top
+				if(_grid[row-1][col].alive())	// Top
 					++count;
-				if(_grid[row][col+1]._alive)	// Right
+				if(_grid[row][col+1].alive())	// Right
 					++count;
-				if(_grid[row][col-1]._alive)	// Left
+				if(_grid[row][col-1].alive())	// Left
 					++count;
 
 				return count;
@@ -160,15 +145,15 @@ public:
 		else if(col == 0) {
 			// ConwayCell
 			if(type == "ConwayCell") {
-				if(_grid[row+1][col]._alive)
+				if(_grid[row+1][col].alive())
 					++count;
-				if(_grid[row+1][col+1]._alive)
+				if(_grid[row+1][col+1].alive())
 					++count;
-				if(_grid[row][col+1]._alive)
+				if(_grid[row][col+1].alive())
 					++count;
-				if(_grid[row-1][col+1]._alive)
+				if(_grid[row-1][col+1].alive())
 					++count;
-				if(_grid[row-1][col]._alive)
+				if(_grid[row-1][col].alive())
 					++count;
 
 				return count;
@@ -176,11 +161,11 @@ public:
 
 			// FredkinCell
 			else if(type == "FredkinCell") {
-				if(_grid[row-1][col]._alive)	// Top
+				if(_grid[row-1][col].alive())	// Top
 					++count;
-				if(_grid[row][col+1]._alive)	// Right
+				if(_grid[row][col+1].alive())	// Right
 					++count;
-				if(_grid[row+1][col]._alive)	// Bottom
+				if(_grid[row+1][col].alive())	// Bottom
 					++count;
 
 				return count;
@@ -191,15 +176,15 @@ public:
 		else {
 			// ConwayCell
 			if(type == "ConwayCell") {
-				if(_grid[row+1][col]._alive)
+				if(_grid[row+1][col].alive())
 					++count;
-				if(_grid[row+1][col-1]._alive)
+				if(_grid[row+1][col-1].alive())
 					++count;
-				if(_grid[row][col-1]._alive)
+				if(_grid[row][col-1].alive())
 					++count;
-				if(_grid[row-1][col-1]._alive)
+				if(_grid[row-1][col-1].alive())
 					++count;
-				if(_grid[row-1][col]._alive)
+				if(_grid[row-1][col].alive())
 					++count;
 
 				return count;
@@ -207,11 +192,11 @@ public:
 
 			// FredkinCell
 			else if(type == "FredkinCell") {
-				if(_grid[row-1][col]._alive)	// Top
+				if(_grid[row-1][col].alive())	// Top
 					++count;
-				if(_grid[row][col-1]._alive)	// Left
+				if(_grid[row][col-1].alive())	// Left
 					++count;
-				if(_grid[row+1][col]._alive)	// Bottom
+				if(_grid[row+1][col].alive())	// Bottom
 					++count;
 
 				return count;
@@ -228,11 +213,11 @@ public:
 		if((row == 0) && (col == 0)) {
 			// ConwayCell
 			if(type == "ConwayCell") {
-				if(_grid[row+1][col]._alive)	// Bottom
+				if(_grid[row+1][col].alive())	// Bottom
 					++count;
-				if(_grid[row+1][col+1]._alive)	// Bottom-right
+				if(_grid[row+1][col+1].alive())	// Bottom-right
 					++count;
-				if(_grid[row][col+1]._alive)	// Right
+				if(_grid[row][col+1].alive())	// Right
 					++count;
 
 				return count;
@@ -241,9 +226,9 @@ public:
 
 			// FredkinCell
 			else if(type == "FredkinCell") {
-				if(_grid[row][col+1]._alive)	// Right
+				if(_grid[row][col+1].alive())	// Right
 					++count;
-				if(_grid[row+1][col]._alive)	// Bottom
+				if(_grid[row+1][col].alive())	// Bottom
 					++count;
 
 				return count;
@@ -254,11 +239,11 @@ public:
 		else if((row == (_rows - 1)) && (col == 0)) {
 			// ConwayCell
 			if(type == "ConwayCell") {
-				if(_grid[row-1][col]._alive)	// Top
+				if(_grid[row-1][col].alive())	// Top
 					++count;
-				if(_grid[row-1][col+1]._alive)	// Top-right
+				if(_grid[row-1][col+1].alive())	// Top-right
 					++count;
-				if(_grid[row][col+1]._alive)	// Right
+				if(_grid[row][col+1].alive())	// Right
 					++count;
 
 				return count;
@@ -266,9 +251,9 @@ public:
 
 			// FredkinCell
 			else if(type == "FredkinCell") {
-				if(_grid[row-1][col]._alive)	// Top
+				if(_grid[row-1][col].alive())	// Top
 					++count;
-				if(_grid[row][col+1]._alive)	// Right
+				if(_grid[row][col+1].alive())	// Right
 					++count;
 
 				return count;
@@ -279,11 +264,11 @@ public:
 		else if((row == (_rows - 1)) && (col == (_columns - 1))) {
 			// ConwayCell
 			if(type == "ConwayCell") {
-				if(_grid[row-1][col]._alive)	// Top
+				if(_grid[row-1][col].alive())	// Top
 					++count;
-				if(_grid[row-1][col-1]._alive)	// Top-left
+				if(_grid[row-1][col-1].alive())	// Top-left
 					++count;
-				if(_grid[row][col-1]._alive)	// Left
+				if(_grid[row][col-1].alive())	// Left
 					++count;
 
 				return count;
@@ -291,9 +276,9 @@ public:
 
 			// FredkinCell
 			else if(type == "FredkinCell") {
-				if(_grid[row-1][col]._alive)	// Top
+				if(_grid[row-1][col].alive())	// Top
 					++count;
-				if(_grid[row][col-1]._alive)	// Left
+				if(_grid[row][col-1].alive())	// Left
 					++count;
 
 				return count;
@@ -304,11 +289,11 @@ public:
 		else {
 			// ConwayCell
 			if(type == "ConwayCell") {
-				if(_grid[row+1][col]._alive)	// Bottom
+				if(_grid[row+1][col].alive())	// Bottom
 					++count;
-				if(_grid[row+1][col-1]._alive)	// Bottom-left
+				if(_grid[row+1][col-1].alive())	// Bottom-left
 					++count;
-				if(_grid[row][col-1]._alive)	// Left
+				if(_grid[row][col-1].alive())	// Left
 					++count;
 
 				return count;
@@ -316,9 +301,9 @@ public:
 
 			// FredkinCell
 			else if(type == "FredkinCell") {
-				if(_grid[row+1][col]._alive)	// Bottom
+				if(_grid[row+1][col].alive())	// Bottom
 					++count;
-				if(_grid[row][col-1]._alive)	// Left
+				if(_grid[row][col-1].alive())	// Left
 					++count;
 
 				return count;
@@ -333,21 +318,21 @@ public:
 
 		// ConwayCell
 		if(type == "ConwayCell") {
-			if(_grid[row-1][col]._alive)	// Top
+			if(_grid[row-1][col].alive())	// Top
 				++count;
-			if(_grid[row-1][col-1]._alive)	// Top-left
+			if(_grid[row-1][col-1].alive())	// Top-left
 				++count;
-			if(_grid[row][col-1]._alive)	// Left
+			if(_grid[row][col-1].alive())	// Left
 				++count;
-			if(_grid[row+1][col-1]._alive)	// Bottom-left
+			if(_grid[row+1][col-1].alive())	// Bottom-left
 				++count;
-			if(_grid[row+1][col]._alive)	// Bottom
+			if(_grid[row+1][col].alive())	// Bottom
 				++count;
-			if(_grid[row+1][col+1]._alive)	// Bottom-right
+			if(_grid[row+1][col+1].alive())	// Bottom-right
 				++count;
-			if(_grid[row][col+1]._alive)	// Right
+			if(_grid[row][col+1].alive())	// Right
 				++count;
-			if(_grid[row-1][col+1]._alive)	// Top-right
+			if(_grid[row-1][col+1].alive())	// Top-right
 				++count;
 
 			return count;
@@ -355,13 +340,13 @@ public:
 
 		// FredkinCell
 		else if(type == "FredkinCell") {
-			if(_grid[row-1][col]._alive)	// Top
+			if(_grid[row-1][col].alive())	// Top
 				++count;
-			if(_grid[row+1][col]._alive)	// Bottom
+			if(_grid[row+1][col].alive())	// Bottom
 				++count;
-			if(_grid[row][col+1]._alive)	// Right
+			if(_grid[row][col+1].alive())	// Right
 				++count;
-			if(_grid[row][col-1]._alive)	// Left
+			if(_grid[row][col-1].alive())	// Left
 				++count;
 
 			return count;
@@ -373,21 +358,28 @@ public:
 	void live_neighbours() {
 		for(int i = 0; i < _rows; ++i) {
 			for(int j = 0; j < _columns; ++j) {
-				if(edge_cell(i, j))
-					_grid[i][j]._liveNeighbours = in_edge(i, j, _grid[i][j].type());
+				if(edge_cell(i, j)) {
+					int e = in_edge(i, j, _grid[i][j].type());
+					_grid[i][j].liveNeighbours(e);
+				}
 				else if(corner_cell(i, j))
-					_grid[i][j]._liveNeighbours = in_corner(i, j, _grid[i][j].type());
-				else
-					_grid[i][j]._liveNeighbours = in_interior(i, j, _grid[i][j].type());
+					_grid[i][j].liveNeighbours(in_corner(i, j, _grid[i][j].type()));
+				else {
+					_grid[i][j].liveNeighbours(in_interior(i, j, _grid[i][j].type()));
+				}
+					//std::cout << _grid[i][j].liveNeighbours();
 			}
+			//std::cout << std::endl;
 		}
+		//std::cout << std::endl;
 	}
 
+	// Counts the total number of live cells in the grid
 	int live_cells() {
 		int count = 0;
 		for(int i = 0; i < _rows; ++i) {
 			for(int j = 0; j < _columns; ++j) {
-				if(_grid[i][j]._alive)
+				if(_grid[i][j].alive())
 					++count;
 			}
 		}
@@ -414,41 +406,49 @@ public:
 
 	  		for(int i = 0; i < _rows; ++i) {
 			  	for(int j = 0; j < _columns; ++j) {
+			  		//out << _grid[i][j].type();
+
 			  		// ConwayCell
 			  		if(_grid[i][j].type() == "ConwayCell") {
+			  			//out << "()()()()(()(()(()()" << std::endl;
 				  		// a dead cell becomes a live cell, if exactly 3 neighbors are alive
-				  		if(!previous_grid[i][j]._alive && previous_grid[i][j]._liveNeighbours == 3)
-				  			_grid[i][j]._alive = true;
+				  		if(!previous_grid[i][j].alive() && previous_grid[i][j].liveNeighbours() == 3)
+				  			_grid[i][j].alive(true);
 
 				  		// a live cell becomes a dead cell, if less than 2 or more than 3 neighbors are alive
-			  			else if(previous_grid[i][j]._alive && (previous_grid[i][j]._liveNeighbours < 2 ||
-				  										   	previous_grid[i][j]._liveNeighbours > 3))
-				  			_grid[i][j]._alive = false;
+			  			else if(previous_grid[i][j].alive() && (previous_grid[i][j].liveNeighbours() < 2 ||
+				  										   	previous_grid[i][j].liveNeighbours() > 3))
+				  			_grid[i][j].alive(false);
 				  	}
 
 			  		// FredkinCell
 			  		else if(_grid[i][j].type() == "FredkinCell") {
+			  			//out << "&&&&&&&&&&&&&&" << std::endl;
+			  			//out << previous_grid[i][j].liveNeighbours();
 		  				// a dead cell becomes a live cell, if 1 or 3 neighbors are alive
-	  					if(!previous_grid[i][j]._alive && (previous_grid[i][j]._liveNeighbours == 1 ||
-							   							     previous_grid[i][j]._liveNeighbours == 3))
-  							_grid[i][j]._alive = true;
+	  					if(!previous_grid[i][j].alive() && (previous_grid[i][j].liveNeighbours() == 1 ||
+							   							     previous_grid[i][j].liveNeighbours() == 3))
+  							_grid[i][j].alive(false);
 
 		  				// a live cell becomes a dead cell, if 0, 2, or 4 neighbors are alive
-	  					else if(previous_grid[i][j]._alive && (previous_grid[i][j]._liveNeighbours == 0 ||
-							  								   previous_grid[i][j]._liveNeighbours == 2 ||
-					  										   previous_grid[i][j]._liveNeighbours == 4))
-				  			_grid[i][j]._alive = false;
+	  					else if(previous_grid[i][j].alive() && (previous_grid[i][j].liveNeighbours() == 0 ||
+							  								   previous_grid[i][j].liveNeighbours() == 2 ||
+					  										   previous_grid[i][j].liveNeighbours() == 4))
+				  			_grid[i][j].alive(false);
 
 				  		// cell remains alive, so increment its age
-				  		else {
-				  			if(_grid[i][j]._alive) {
-				  				_grid[i][j].inc_age();
-				  				if(_grid[i][j]._age == 2)
-				  					_grid[i][j].mutate();
-							}
-				  		}
+				  		/*else if(1) std::cout << _grid[i][j].alive() << std::endl;*/
+                		else if(_grid[i][j].alive()) {
+                			//out << "@@@@@@@@@@@@@@" << std::endl;
+				  			_grid[i][j].inc_age();
+				  			if(_grid[i][j].can_mutate()) {
+				  				out << "blah" << std::endl;
+				  				_grid[i][j].mutate();
+				  			}
+						}
 				  	}
 			  	}
+			  	//out << std::endl;
 		  	}
         	if(gen < print_times) {
         		print(out, gen);

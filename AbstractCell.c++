@@ -7,4 +7,5 @@
 
 AbstractCell::AbstractCell() {
   _alive = false;
+  _liveNeighbours = 0;
 }

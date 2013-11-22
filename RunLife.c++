@@ -95,7 +95,7 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
-/*        ifstream ifile("RunLifeFredkin.in");
+        ifstream ifile("RunLifeFredkin.in");
         ofile << "*** Life<FredkinCell> 20x20 ***" << endl;
 
         Life<FredkinCell> life;
@@ -103,7 +103,7 @@ int main () {
         ifile.close();
         
         life.print(ofile, 0);
-        life.simulate(5, 6, ofile);*/
+        life.simulate(5, 6, ofile);
         
         }
     catch (const invalid_argument&) {
@@ -122,14 +122,14 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
-        ifstream ifile("RunLifeCell.in");
+/*        ifstream ifile("RunLifeCell.in");
         ofile << "*** Life<Cell> 20x20 ***" << endl;
 
         Life<Cell> life;
         life.store_cells(ifile);
         ifile.close();
         life.print(ofile, 0);
-        life.simulate(5, 6, ofile);
+        life.simulate(5, 6, ofile);*/
         }
     catch (const invalid_argument&) {
         assert(false);}

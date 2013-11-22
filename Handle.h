@@ -28,7 +28,7 @@ class Handle {
     private:
         pointer _p;
 
-    protected:
+    public:
         pointer get () {
             return _p;}
 

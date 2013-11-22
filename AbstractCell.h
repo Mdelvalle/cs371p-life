@@ -10,20 +10,20 @@
 #include <utility> // !=
 
 class AbstractCell {
-/*  friend bool operator == (const AbstractCell& lhs, const AbstractCell& rhs) {
-        return lhs.equals(rhs);}
-
-    friend std::istream& operator >> (std::istream& lhs, AbstractCell& rhs) {
-        return rhs.read(lhs);}
-
-    friend std::ostream& operator << (std::ostream& lhs, const AbstractCell& rhs) {
-        return rhs.write(lhs);}*/
 
 public:
 	bool _alive;
+  int _liveNeighbours;
 
 	AbstractCell();
 
+  // virtual void set_liveliness() = 0;
+  virtual void alive(bool) = 0;
+  virtual bool alive() = 0;
+  virtual void liveNeighbours(int) = 0;
+  virtual int liveNeighbours() = 0;
+  virtual void inc_age() = 0;
+  virtual bool can_mutate() = 0;
   virtual void mutate() = 0;
   virtual std::string type() = 0;
   virtual AbstractCell* clone() const = 0;

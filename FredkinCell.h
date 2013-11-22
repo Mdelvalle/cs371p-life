@@ -13,13 +13,17 @@ private:
 	int _age;
 
 public:
-	int _liveNeighbours;
+	//int _liveNeighbours;
 	FredkinCell();
-	char print();
 	void inc_age();
 	
-	std::string type();
 
+	virtual void alive(bool);
+	virtual bool alive();
+    virtual void liveNeighbours(int);
+    virtual int liveNeighbours();
+  	virtual std::string type();
+  	virtual bool can_mutate();
 	virtual void mutate();
 	virtual FredkinCell* clone() const;
 	virtual std::istream& read (std::istream&);
