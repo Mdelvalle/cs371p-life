@@ -1,3 +1,27 @@
+commit 9597a4769fb6ec4135953c3d75128370ac2b6604
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Fri Nov 22 14:41:35 2013 -0600
+
+    ConwayCell, FredkinCell, and Cell now work like they're supposed to
+
+commit 7221c679fe97f3f029fac035656cb0f2ecae728a
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Thu Nov 21 21:07:16 2013 -0600
+
+    rewrote the whole damn thing
+
+commit f815889985c3b226a460ab5c1b5c3c491fac5da0
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Thu Nov 21 05:46:52 2013 -0600
+
+    bs
+
+commit 8ea53a5586e245791574956895ea57ed2b5e5d57
+Author: miguel del valle <delvalle@cs.utexas.edu>
+Date:   Thu Nov 21 04:32:42 2013 -0600
+
+    made input/output more abstract
+
 commit 5ce8b1a9338ba90cfac549a527be254d3b9d0e2c
 Author: miguel del valle <delvalle@cs.utexas.edu>
 Date:   Wed Nov 20 17:15:13 2013 -0600

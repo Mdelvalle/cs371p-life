@@ -10,8 +10,8 @@ Running main() from gtest_main.cc
 [       OK ] Life.method3 (1 ms)
 [ RUN      ] Life.method4
 [       OK ] Life.method4 (1 ms)
-[----------] 4 tests from Life (20 ms total)
+[----------] 4 tests from Life (19 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test case ran. (48 ms total)
+[==========] 4 tests from 1 test case ran. (45 ms total)
 [  PASSED  ] 4 tests.

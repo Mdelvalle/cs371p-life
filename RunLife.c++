@@ -100,10 +100,21 @@ int main () {
 
         Life<FredkinCell> life;
         life.store_cells(ifile);
-        ifile.close();
+        //ifile.close();
         
         life.print(ofile, 0);
         life.simulate(5, 6, ofile);
+
+        ofile << "*** Life<FredkinCell> 20x20 ***" << endl;
+
+        Life<FredkinCell> life2;
+        life2.store_cells(ifile);
+        ifile.close();
+        
+        life2.print(ofile, 0);
+        life2.simulate(5, 6, ofile);
+
+        //ifile.close();
         
         }
     catch (const invalid_argument&) {
