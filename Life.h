@@ -42,16 +42,7 @@ public:
 			for(int j = 0; j < _columns; ++j) {
 				_grid[i][j].read(in);
 			}
-			//std::cout << std::endl;
 		}
-		std::cout << std::endl;
-/*		for(int i = 0; i < _rows; ++i) {
-			for(int j = 0; j < _columns; ++j) {
-				std::cout << _grid[i][j].alive();
-			}
-			std::cout << std::endl;
-		}
-		std::cout << std::endl;*/
 	}
 
 	// returns true if cell is in edge, false otherwise
@@ -367,11 +358,8 @@ public:
 				else {
 					_grid[i][j].liveNeighbours(in_interior(i, j, _grid[i][j].type()));
 				}
-					//std::cout << _grid[i][j].liveNeighbours();
 			}
-			//std::cout << std::endl;
 		}
-		//std::cout << std::endl;
 	}
 
 	// Counts the total number of live cells in the grid
@@ -391,7 +379,6 @@ public:
 		for(int i = 0; i < _rows; ++i) {
 			for(int j = 0; j < _columns; ++j) {
 				_grid[i][j].write(out);
-				//out << (_grid[i][j]).print();
 			}
 			out << std::endl;
 		}
@@ -406,49 +393,44 @@ public:
 
 	  		for(int i = 0; i < _rows; ++i) {
 			  	for(int j = 0; j < _columns; ++j) {
-			  		//out << _grid[i][j].type();
 
 			  		// ConwayCell
 			  		if(_grid[i][j].type() == "ConwayCell") {
-			  			//out << "()()()()(()(()(()()" << std::endl;
 				  		// a dead cell becomes a live cell, if exactly 3 neighbors are alive
-				  		if(!previous_grid[i][j].alive() && previous_grid[i][j].liveNeighbours() == 3)
+				  		if(!previous_grid[i][j].alive() && (previous_grid[i][j].liveNeighbours() == 3))
 				  			_grid[i][j].alive(true);
 
 				  		// a live cell becomes a dead cell, if less than 2 or more than 3 neighbors are alive
-			  			else if(previous_grid[i][j].alive() && (previous_grid[i][j].liveNeighbours() < 2 ||
-				  										   	previous_grid[i][j].liveNeighbours() > 3))
+			  			else if(previous_grid[i][j].alive() && ((previous_grid[i][j].liveNeighbours() < 2) ||
+				  										   	(previous_grid[i][j].liveNeighbours() > 3)))
 				  			_grid[i][j].alive(false);
 				  	}
 
 			  		// FredkinCell
 			  		else if(_grid[i][j].type() == "FredkinCell") {
-			  			//out << "&&&&&&&&&&&&&&" << std::endl;
-			  			//out << previous_grid[i][j].liveNeighbours();
 		  				// a dead cell becomes a live cell, if 1 or 3 neighbors are alive
 	  					if(!previous_grid[i][j].alive() && (previous_grid[i][j].liveNeighbours() == 1 ||
-							   							     previous_grid[i][j].liveNeighbours() == 3))
-  							_grid[i][j].alive(false);
+							   							     previous_grid[i][j].liveNeighbours() == 3)) {
+  							_grid[i][j].alive(true);
+  						}
 
 		  				// a live cell becomes a dead cell, if 0, 2, or 4 neighbors are alive
-	  					else if(previous_grid[i][j].alive() && (previous_grid[i][j].liveNeighbours() == 0 ||
-							  								   previous_grid[i][j].liveNeighbours() == 2 ||
-					  										   previous_grid[i][j].liveNeighbours() == 4))
+	  					else if(previous_grid[i][j].alive() && ((previous_grid[i][j].liveNeighbours() == 0) ||
+							  								   (previous_grid[i][j].liveNeighbours() == 2) ||
+					  										   (previous_grid[i][j].liveNeighbours() == 4))) {
+	  						//std::cout << "()";
 				  			_grid[i][j].alive(false);
+				  		}
 
 				  		// cell remains alive, so increment its age
-				  		/*else if(1) std::cout << _grid[i][j].alive() << std::endl;*/
                 		else if(_grid[i][j].alive()) {
-                			//out << "@@@@@@@@@@@@@@" << std::endl;
 				  			_grid[i][j].inc_age();
 				  			if(_grid[i][j].can_mutate()) {
-				  				out << "blah" << std::endl;
 				  				_grid[i][j].mutate();
 				  			}
 						}
 				  	}
 			  	}
-			  	//out << std::endl;
 		  	}
         	if(gen < print_times) {
         		print(out, gen);

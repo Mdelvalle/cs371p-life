@@ -34,22 +34,17 @@ std::string Cell::type() {
     return get()->type();
 }
 
-/*void Cell::set_liveliness() {
-    ac->_alive = ac->set_liveliness();
-}*/
-
 void Cell::inc_age() {
 	ac->inc_age();
 }
 
 bool Cell::can_mutate() {
-    //std::cout << "in mutate CELL" << std::endl;
 	return ac->can_mutate();
 }
 
 void Cell::mutate () {
     Cell c(new ConwayCell());
-    get()->_alive = true;
+    ac->_alive = true;
     swap(c);
 }
 

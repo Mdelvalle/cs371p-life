@@ -13,13 +13,10 @@
 
 class Cell : public Handle<AbstractCell> {
 	public:
-/*		bool _alive;
-		int _liveNeighbours;*/
     	AbstractCell* ac;
     	Cell();
     	Cell(AbstractCell* p);
 
-        // virtual void set_liveliness();
         virtual void alive(bool);
         virtual bool alive();
         virtual void liveNeighbours(int);

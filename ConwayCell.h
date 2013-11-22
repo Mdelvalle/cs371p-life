@@ -10,11 +10,9 @@
 
 class ConwayCell : public AbstractCell {
 	public:
-		//int _liveNeighbours;
 		ConwayCell();
 		void inc_age();
 
-		// virtual void set_liveliness();
 		virtual void alive(bool);
 		virtual bool alive();
         virtual void liveNeighbours(int);

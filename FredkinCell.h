@@ -13,11 +13,9 @@ private:
 	int _age;
 
 public:
-	//int _liveNeighbours;
 	FredkinCell();
 	void inc_age();
 	
-
 	virtual void alive(bool);
 	virtual bool alive();
     virtual void liveNeighbours(int);

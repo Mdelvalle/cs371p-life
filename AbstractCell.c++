@@ -6,6 +6,6 @@
 #include "AbstractCell.h"
 
 AbstractCell::AbstractCell() {
-  _alive = false;
+  _alive = true;
   _liveNeighbours = 0;
 }

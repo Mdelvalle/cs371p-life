@@ -17,7 +17,6 @@ public:
 
 	AbstractCell();
 
-  // virtual void set_liveliness() = 0;
   virtual void alive(bool) = 0;
   virtual bool alive() = 0;
   virtual void liveNeighbours(int) = 0;

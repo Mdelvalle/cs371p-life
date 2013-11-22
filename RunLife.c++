@@ -62,7 +62,7 @@ int main () {
         Simulate 2177 moves.
         Print the 2500th grid.
         */
-/*        ifstream ifile("RunLifeConway.in");
+        ifstream ifile("RunLifeConway.in");
         ofile << "*** Life<ConwayCell> 109x69 ***" << endl;
 
         Life<ConwayCell> life;
@@ -77,7 +77,7 @@ int main () {
         life.print(ofile, 323);
 
         life.simulate(2177, 0, ofile);
-        life.print(ofile, 2500);*/
+        life.print(ofile, 2500);
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -122,14 +122,14 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
-/*        ifstream ifile("RunLifeCell.in");
+        ifstream ifile("RunLifeCell.in");
         ofile << "*** Life<Cell> 20x20 ***" << endl;
 
         Life<Cell> life;
         life.store_cells(ifile);
         ifile.close();
         life.print(ofile, 0);
-        life.simulate(5, 6, ofile);*/
+        life.simulate(5, 6, ofile);
         }
     catch (const invalid_argument&) {
         assert(false);}

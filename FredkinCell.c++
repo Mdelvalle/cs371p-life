@@ -5,21 +5,6 @@
 // INCLUDES
 #include "FredkinCell.h"
 
-/*FredkinCell::FredkinCell(char c) :
-                         AbstractCell() {
-	if(c == '-') {
-		_alive = false;
-		_age = 0;
-	}
-	else if(c == '+') {
-		_alive = true;
-		_age = 10;
-	}
-	else {
-		_age = c - '0';
-		_alive = true;
-	}
-}*/
 
 FredkinCell::FredkinCell() : AbstractCell() {
 	_age = 0;
@@ -36,11 +21,11 @@ bool FredkinCell::alive() {
 }
 
 void FredkinCell::liveNeighbours(int b) {
-	AbstractCell::_liveNeighbours = b;
+	_liveNeighbours = b;
 }
 
 int FredkinCell::liveNeighbours() {
-	return AbstractCell::_liveNeighbours;
+	return _liveNeighbours;
 }
 
 bool FredkinCell::can_mutate() {
@@ -74,7 +59,6 @@ std::istream& FredkinCell::read (std::istream& in) {
 		_alive = true;
 		_age = c - '0';
 	}
-	//std::cout << _alive;
 	return in;
 }
 
@@ -84,7 +68,7 @@ std::ostream& FredkinCell::write (std::ostream& out) const {
 	else if(_age >= 10)
 		return out << '+';
 	else
-		return out << _age;// + '0';
+		return out << _age;
 }
 
 void FredkinCell::inc_age() {
