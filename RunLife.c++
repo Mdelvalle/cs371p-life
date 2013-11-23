@@ -67,7 +67,6 @@ int main () {
 
         Life<ConwayCell> life;
         life.store_cells(ifile);
-        ifile.close();
 
         life.print(ofile, 0);
         life.simulate(283, 10, ofile);
@@ -78,6 +77,68 @@ int main () {
 
         life.simulate(2177, 0, ofile);
         life.print(ofile, 2500);
+        
+        /*
+        Simulate 16 moves.
+        Print 10 grids
+        Print final gird
+								*/
+        
+        ofile << "*** Life<ConwayCell> 15x15 ***" << endl;
+        Life<ConwayCell> life2;
+        life2.store_cells(ifile);
+        
+        life2.print(ofile, 0);
+        life2.simulate(16, 10, ofile);
+        life2.print(ofile, 16);
+        
+        /*
+        psteiner
+        */
+        ofile << "*** psteiner Life<ConwayCell> 37x58 ***" << endl;
+        Life<ConwayCell> life3;
+        life3.store_cells(ifile);
+        
+        life3.print(ofile, 0);
+        life3.simulate(16, 16, ofile);
+        life3.print(ofile, 16);
+        
+        life3.simulate(14, 0, ofile);
+        life3.print(ofile, 30);
+        
+        life3.simulate(30, 0, ofile);
+        life3.print(ofile, 60);
+        
+        life3.simulate(30, 0, ofile);
+        life3.print(ofile, 90);
+        
+        life3.simulate(30, 0, ofile);
+        life3.print(ofile, 120);
+        
+        /*
+        pjruiz15
+        */
+        ofile << "*** pjruiz15 Life<ConwayCell> 42x31 ***" << endl;
+        Life<ConwayCell> life4;
+        life4.store_cells(ifile);
+        
+        life4.print(ofile, 0);
+        life4.simulate(5, 5, ofile);
+        life4.print(ofile, 5);
+        
+        
+        /*
+        swilken
+        */
+        ofile << "*** swilken Life<ConwayCell> 9x5 ***" << endl;
+        Life<ConwayCell> life5;
+        life5.store_cells(ifile);
+        
+        life5.print(ofile, 0);
+        life5.simulate(5, 5, ofile);
+        life5.print(ofile, 5);
+        
+        ifile.close();
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -89,7 +150,6 @@ int main () {
     // ------------------
 
     try {
-        //cout << "*** Life<FredkinCell> 20x20 ***" << endl;
         /*
         read RunLifeFredkin.in // assume all Fredkin cells
         Simulate 5 moves.
@@ -100,21 +160,53 @@ int main () {
 
         Life<FredkinCell> life;
         life.store_cells(ifile);
-        //ifile.close();
         
         life.print(ofile, 0);
         life.simulate(5, 6, ofile);
+        
+        
+        /*
+        Simulate 8 moves.
+        Print 5 grids
+        Print final gird
+								*/
 
-        ofile << "*** Life<FredkinCell> 20x20 ***" << endl;
+        ofile << "*** Life<FredkinCell> 30x20 ***" << endl;
 
         Life<FredkinCell> life2;
         life2.store_cells(ifile);
-        ifile.close();
         
         life2.print(ofile, 0);
-        life2.simulate(5, 6, ofile);
+        life2.simulate(8, 5, ofile);
+        life2.print(ofile, 8);
 
-        //ifile.close();
+
+        /*
+        pratik47
+								*/
+        ofile << "*** pratik47 Life<FredkinCell> 40x20 ***" << endl;
+        
+        Life<FredkinCell> life3;
+        life3.store_cells(ifile);
+        
+        life3.print(ofile, 0);
+        life3.simulate(5, 5, ofile);
+        life3.print(ofile, 5);
+        
+        
+        /*
+        pratik47
+								*/
+        ofile << "*** pratik47 Life<FredkinCell> 26x26 ***" << endl;
+        
+        Life<FredkinCell> life4;
+        life4.store_cells(ifile);
+        
+        life4.print(ofile, 0);
+        life4.simulate(5, 5, ofile);
+        life4.print(ofile, 5);
+        
+        ifile.close();
         
         }
     catch (const invalid_argument&) {
@@ -138,9 +230,37 @@ int main () {
 
         Life<Cell> life;
         life.store_cells(ifile);
-        ifile.close();
         life.print(ofile, 0);
         life.simulate(5, 6, ofile);
+        
+        
+        /*
+        Simulate 30 moves.
+        Print 7 grids
+        Print final gird
+								*/
+
+        ofile << "*** Life<Cell> 40x40 ***" << endl;
+        
+        Life<Cell> life2;
+        life2.store_cells(ifile);
+        
+        life2.print(ofile, 0);
+        life2.simulate(30, 7, ofile);
+        life2.print(ofile, 30);
+        
+        /*
+        ryan76
+        */
+        ofile << "*** ryan76 Life<Cell> 10x8 ***" << endl;
+        
+        Life<FredkinCell> life3;
+        life3.store_cells(ifile);
+        
+        life3.print(ofile, 0);
+        life3.simulate(5, 5, ofile);
+        life3.print(ofile, 5);
+        ifile.close();
         }
     catch (const invalid_argument&) {
         assert(false);}
