@@ -137,6 +137,17 @@ int main () {
         life5.print(ofile, 0);
         life5.simulate(5, 5, ofile);
         life5.print(ofile, 5);
+                
+        /*
+        tbarnett
+        */
+        ofile << "*** tbarnett Life<ConwayCell> 9x5 ***" << endl;
+        Life<ConwayCell> life6;
+        life6.store_cells(ifile);
+        
+        life6.print(ofile, 0);
+        life6.simulate(3, 3, ofile);
+        life6.print(ofile, 3);
         
         ifile.close();
         }
@@ -205,6 +216,18 @@ int main () {
         life4.print(ofile, 0);
         life4.simulate(5, 5, ofile);
         life4.print(ofile, 5);
+        
+        
+        /*
+        psteiner
+        */
+        ofile << "*** psteiner Life<FredkinCell> 29x45 ***" << endl;
+        Life<FredkinCell> life5;
+        life5.store_cells(ifile);
+        
+        life5.print(ofile, 0);
+        life5.simulate(8, 8, ofile);
+        life5.print(ofile, 8);
         
         ifile.close();
         
