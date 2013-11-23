@@ -1,17 +1,97 @@
-Running main() from gtest_main.cc
-[==========] Running 4 tests from 1 test case.
+[==========] Running 40 tests from 4 test cases.
 [----------] Global test environment set-up.
-[----------] 4 tests from Life
-[ RUN      ] Life.method1
-[       OK ] Life.method1 (7 ms)
-[ RUN      ] Life.method2
-[       OK ] Life.method2 (1 ms)
-[ RUN      ] Life.method3
-[       OK ] Life.method3 (1 ms)
-[ RUN      ] Life.method4
-[       OK ] Life.method4 (1 ms)
-[----------] 4 tests from Life (19 ms total)
+[----------] 6 tests from FredkinCell
+[ RUN      ] FredkinCell.fredkin1
+[       OK ] FredkinCell.fredkin1 (0 ms)
+[ RUN      ] FredkinCell.fredkin2
+[       OK ] FredkinCell.fredkin2 (0 ms)
+[ RUN      ] FredkinCell.fredkin3
+[       OK ] FredkinCell.fredkin3 (0 ms)
+[ RUN      ] FredkinCell.fredkin4
+[       OK ] FredkinCell.fredkin4 (0 ms)
+[ RUN      ] FredkinCell.fredkin5
+[       OK ] FredkinCell.fredkin5 (0 ms)
+[ RUN      ] FredkinCell.fredkin6
+[       OK ] FredkinCell.fredkin6 (0 ms)
+[----------] 6 tests from FredkinCell (0 ms total)
+
+[----------] 6 tests from ConwayCell
+[ RUN      ] ConwayCell.ConwayCell1
+[       OK ] ConwayCell.ConwayCell1 (0 ms)
+[ RUN      ] ConwayCell.ConwayCell2
+[       OK ] ConwayCell.ConwayCell2 (0 ms)
+[ RUN      ] ConwayCell.ConwayCell3
+[       OK ] ConwayCell.ConwayCell3 (0 ms)
+[ RUN      ] ConwayCell.ConwayCell4
+[       OK ] ConwayCell.ConwayCell4 (0 ms)
+[ RUN      ] ConwayCell.ConwayCell5
+[       OK ] ConwayCell.ConwayCell5 (0 ms)
+[ RUN      ] ConwayCell.ConwayCell6
+[       OK ] ConwayCell.ConwayCell6 (0 ms)
+[----------] 6 tests from ConwayCell (0 ms total)
+
+[----------] 10 tests from Cell
+[ RUN      ] Cell.cell1
+[       OK ] Cell.cell1 (0 ms)
+[ RUN      ] Cell.cell2
+[       OK ] Cell.cell2 (0 ms)
+[ RUN      ] Cell.cell3
+[       OK ] Cell.cell3 (0 ms)
+[ RUN      ] Cell.cell4
+[       OK ] Cell.cell4 (0 ms)
+[ RUN      ] Cell.cell5
+[       OK ] Cell.cell5 (0 ms)
+[ RUN      ] Cell.cell6
+[       OK ] Cell.cell6 (0 ms)
+[ RUN      ] Cell.cell7
+[       OK ] Cell.cell7 (0 ms)
+[ RUN      ] Cell.cell8
+[       OK ] Cell.cell8 (0 ms)
+[ RUN      ] Cell.cell9
+[       OK ] Cell.cell9 (0 ms)
+[ RUN      ] Cell.cell10
+[       OK ] Cell.cell10 (0 ms)
+[----------] 10 tests from Cell (0 ms total)
+
+[----------] 18 tests from Life
+[ RUN      ] Life.life1
+[       OK ] Life.life1 (0 ms)
+[ RUN      ] Life.life2
+[       OK ] Life.life2 (0 ms)
+[ RUN      ] Life.life3
+[       OK ] Life.life3 (0 ms)
+[ RUN      ] Life.life4
+[       OK ] Life.life4 (28 ms)
+[ RUN      ] Life.life5
+[       OK ] Life.life5 (23 ms)
+[ RUN      ] Life.life6
+[       OK ] Life.life6 (0 ms)
+[ RUN      ] Life.life7
+[       OK ] Life.life7 (0 ms)
+[ RUN      ] Life.life8
+[       OK ] Life.life8 (0 ms)
+[ RUN      ] Life.life9
+[       OK ] Life.life9 (25 ms)
+[ RUN      ] Life.life10
+[       OK ] Life.life10 (0 ms)
+[ RUN      ] Life.life11
+[       OK ] Life.life11 (0 ms)
+[ RUN      ] Life.life12
+[       OK ] Life.life12 (0 ms)
+[ RUN      ] Life.life13
+[       OK ] Life.life13 (23 ms)
+[ RUN      ] Life.life14
+[       OK ] Life.life14 (0 ms)
+[ RUN      ] Life.life15
+[       OK ] Life.life15 (0 ms)
+[ RUN      ] Life.life16
+[       OK ] Life.life16 (0 ms)
+[ RUN      ] Life.life17
+[       OK ] Life.life17 (0 ms)
+[ RUN      ] Life.life18
+[       OK ] Life.life18 (0 ms)
+[----------] 18 tests from Life (101 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test case ran. (45 ms total)
-[  PASSED  ] 4 tests.
+[==========] 40 tests from 4 test cases ran. (101 ms total)
+[  PASSED  ] 40 tests.
